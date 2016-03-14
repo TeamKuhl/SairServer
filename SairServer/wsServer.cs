@@ -13,7 +13,6 @@ namespace SairServer
         public wsServer(IPAddress aIpAdress, int aPort)
         {
             mServer = new WebSocketServer(aIpAdress, aPort, false);
-            //mServer = new WebSocketServer("ws://" + aIpAdress.ToString());
             mServer.AddWebSocketService<wsClient>("/wsService");
         }
 

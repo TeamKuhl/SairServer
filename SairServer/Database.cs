@@ -29,7 +29,6 @@ namespace SairServer
             while (Reader.Read())
             {
                 container.add(new engineObject(null, Reader.GetValue(2).ToString(), new position(Convert.ToDouble(Reader.GetValue(3)), Convert.ToDouble(Reader.GetValue(4)), Convert.ToDouble(Reader.GetValue(5))), new rotation(null, Convert.ToDouble(Reader.GetValue(6)), null)));
-                //container.add(new Model(Reader.GetValue(2).ToString(), (int)Reader.GetValue(3), (int)Reader.GetValue(4), (int)Reader.GetValue(5), Convert.ToDouble(Reader.GetValue(6).ToString())));
             }
 
             mSQLConnection.Close();

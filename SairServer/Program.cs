@@ -71,7 +71,7 @@ namespace SairServer
         private static void openWS(wsClient awsClient)
         {
             Console.WriteLine("Client got ID: " + awsClient.ID);
-            awsClient.send(mDatabase.getMap(9));
+            awsClient.send(mDatabase.getMap(11));
 
             //Send client UUID
             Container container = new Container(Enums.type.clientuuid);
@@ -137,72 +137,78 @@ namespace SairServer
             {
                 if (eObj.uuid == aObject.uuid)
                 {
-                    if (eObj.model != aObject.model)
+                    if (eObj.model != aObject.model && aObject.model != string.Empty)
                     {
                         model = aObject.model;
                         eObj.model = model;
                     }
 
                     //Position
-                    if (eObj.position.x != aObject.position.x)
+                    if (aObject.position != null)
                     {
-                        position.x = aObject.position.x;
-                        eObj.position.x = position.x;
-                    }
-                    else
-                    {
-                        position.x = null;
-                    }
+                        if (eObj.position.x != aObject.position.x)
+                        {
+                            position.x = aObject.position.x;
+                            eObj.position.x = position.x;
+                        }
+                        else
+                        {
+                            position.x = null;
+                        }
 
-                    if (eObj.position.y != aObject.position.y)
-                    {
-                        position.y = aObject.position.y;
-                        eObj.position.y = position.y;
-                    }
-                    else
-                    {
-                        position.y = null;
-                    }
+                        if (eObj.position.y != aObject.position.y)
+                        {
+                            position.y = aObject.position.y;
+                            eObj.position.y = position.y;
+                        }
+                        else
+                        {
+                            position.y = null;
+                        }
 
-                    if (eObj.position.z != aObject.position.z)
-                    {
-                        position.z = aObject.position.z;
-                        eObj.position.z = position.z;
-                    }
-                    else
-                    {
-                        position.z = null;
+                        if (eObj.position.z != aObject.position.z)
+                        {
+                            position.z = aObject.position.z;
+                            eObj.position.z = position.z;
+                        }
+                        else
+                        {
+                            position.z = null;
+                        }
                     }
 
                     //rotation
-                    if (eObj.rotation.x != aObject.rotation.x)
+                    if (aObject.rotation != null)
                     {
-                        rotation.x = aObject.rotation.x;
-                        eObj.rotation.x = rotation.x;
-                    }
-                    else
-                    {
-                        rotation.x = null;
-                    }
+                        if (eObj.rotation.x != aObject.rotation.x)
+                        {
+                            rotation.x = aObject.rotation.x;
+                            eObj.rotation.x = rotation.x;
+                        }
+                        else
+                        {
+                            rotation.x = null;
+                        }
 
-                    if (eObj.rotation.y != aObject.rotation.y)
-                    {
-                        rotation.y = aObject.rotation.y;
-                        eObj.rotation.y = rotation.y;
-                    }
-                    else
-                    {
-                        rotation.y = null;
-                    }
+                        if (eObj.rotation.y != aObject.rotation.y)
+                        {
+                            rotation.y = aObject.rotation.y;
+                            eObj.rotation.y = rotation.y;
+                        }
+                        else
+                        {
+                            rotation.y = null;
+                        }
 
-                    if (eObj.rotation.z != aObject.rotation.z)
-                    {
-                        rotation.z = aObject.rotation.z;
-                        eObj.rotation.z = rotation.z;
-                    }
-                    else
-                    {
-                        rotation.z = null;
+                        if (eObj.rotation.z != aObject.rotation.z)
+                        {
+                            rotation.z = aObject.rotation.z;
+                            eObj.rotation.z = rotation.z;
+                        }
+                        else
+                        {
+                            rotation.z = null;
+                        }
                     }
                     break;
                 }

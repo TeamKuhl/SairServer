@@ -1,0 +1,6 @@
+F:\Sair\SairServer\SairServer\bin\Release\SairServer.exe.config
+F:\Sair\SairServer\SairServer\bin\Release\SairServer.exe
+F:\Sair\SairServer\SairServer\bin\Release\SairServer.pdb
+F:\Sair\SairServer\SairServer\bin\Release\MySql.Data.dll
+F:\Sair\SairServer\SairServer\obj\Release\SairServer.exe
+F:\Sair\SairServer\SairServer\obj\Release\SairServer.pdb

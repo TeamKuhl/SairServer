@@ -1,0 +1,14 @@
+C:\Users\roll_niklas\Desktop\WebSocketsTest\WebSocketsTest\bin\Debug\WebSocketsTest.exe.config
+C:\Users\roll_niklas\Desktop\WebSocketsTest\WebSocketsTest\bin\Debug\WebSocketsTest.exe
+C:\Users\roll_niklas\Desktop\WebSocketsTest\WebSocketsTest\bin\Debug\WebSocketsTest.pdb
+C:\Users\roll_niklas\Desktop\WebSocketsTest\WebSocketsTest\bin\Debug\websocket-sharp.dll
+C:\Users\roll_niklas\Desktop\WebSocketsTest\WebSocketsTest\obj\Debug\WebSocketsTest.csprojResolveAssemblyReference.cache
+C:\Users\roll_niklas\Desktop\WebSocketsTest\WebSocketsTest\obj\Debug\WebSocketsTest.exe
+C:\Users\roll_niklas\Desktop\WebSocketsTest\WebSocketsTest\obj\Debug\WebSocketsTest.pdb
+C:\Users\roll_niklas\Desktop\WebSocketsTest\WebSocketsTest\bin\Debug\Newtonsoft.Json.dll
+E:\Sair\WebSocketsTest\WebSocketsTest\bin\Debug\WebSocketsTest.exe.config
+E:\Sair\WebSocketsTest\WebSocketsTest\obj\Debug\WebSocketsTest.exe
+E:\Sair\WebSocketsTest\WebSocketsTest\obj\Debug\WebSocketsTest.pdb
+E:\Sair\WebSocketsTest\WebSocketsTest\bin\Debug\WebSocketsTest.exe
+E:\Sair\WebSocketsTest\WebSocketsTest\bin\Debug\WebSocketsTest.pdb
+E:\Sair\WebSocketsTest\WebSocketsTest\obj\Debug\WebSocketsTest.csprojResolveAssemblyReference.cache

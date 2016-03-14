@@ -79,7 +79,7 @@ namespace SairServer
             awsClient.send(container);
 
             //create vehicle
-            engineObject obj = new engineObject(awsClient.ID, "fire", new position(1, 1, 1), new rotation());
+            engineObject obj = new engineObject(awsClient.ID, "fire", new position(1, 1, 1), new rotation(false));
 
             mengineObjects.add(obj);
 
@@ -137,8 +137,8 @@ namespace SairServer
         private static engineObject optimizeJSON(engineObject aObject)
         {
             string model = null;
-            position position = new position();
-            rotation rotation = new rotation();
+            position position = new position(null, null, null);
+            rotation rotation = new rotation(null, null, null);
 
             foreach (engineObject eObj in mengineObjects.objects)
             {
@@ -158,29 +158,17 @@ namespace SairServer
                             position.x = aObject.position.x;
                             eObj.position.x = position.x;
                         }
-                        else
-                        {
-                            position.x = null;
-                        }
 
                         if (eObj.position.y != aObject.position.y && aObject.position.y != null)
                         {
                             position.y = aObject.position.y;
                             eObj.position.y = position.y;
                         }
-                        else
-                        {
-                            position.y = null;
-                        }
 
                         if (eObj.position.z != aObject.position.z && aObject.position.z != null)
                         {
                             position.z = aObject.position.z;
                             eObj.position.z = position.z;
-                        }
-                        else
-                        {
-                            position.z = null;
                         }
                     }
                     else
@@ -196,29 +184,17 @@ namespace SairServer
                             rotation.x = aObject.rotation.x;
                             eObj.rotation.x = rotation.x;
                         }
-                        else
-                        {
-                            rotation.x = null;
-                        }
 
                         if (eObj.rotation.y != aObject.rotation.y && aObject.rotation.y != null)
                         {
                             rotation.y = aObject.rotation.y;
                             eObj.rotation.y = rotation.y;
                         }
-                        else
-                        {
-                            rotation.y = null;
-                        }
 
                         if (eObj.rotation.z != aObject.rotation.z && aObject.rotation.z != null)
                         {
                             rotation.z = aObject.rotation.z;
                             eObj.rotation.z = rotation.z;
-                        }
-                        else
-                        {
-                            rotation.z = null;
                         }
                     }
                     else

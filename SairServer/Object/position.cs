@@ -8,11 +8,16 @@ namespace SairServer
         private double? mY;
         private double? mZ;
 
-        public position()
+        public position() { }
+
+        public position(bool aNull)
         {
-            mX = 0;
-            mY = 0;
-            mZ = 0;
+            if (!aNull)
+            {
+                mX = 0;
+                mY = 0;
+                mZ = 0;
+            }
         }
 
         public position(double? aX, double? aY, double? aZ)

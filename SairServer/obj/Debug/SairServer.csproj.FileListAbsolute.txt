@@ -26,3 +26,9 @@ C:\Users\roll\Documents\Sair\SairServer\SairServer\obj\Debug\SairServer.pdb
 C:\Users\roll\Documents\Sair\SairServer\SairServer\bin\Debug\SairServer.exe
 C:\Users\roll\Documents\Sair\SairServer\SairServer\bin\Debug\SairServer.pdb
 C:\Users\roll\Documents\Sair\SairServer\SairServer\obj\Debug\SairServer.csprojResolveAssemblyReference.cache
+C:\Users\nikla\Documents\Sair\SairServer\SairServer\bin\Debug\SairServer.exe.config
+C:\Users\nikla\Documents\Sair\SairServer\SairServer\obj\Debug\SairServer.exe
+C:\Users\nikla\Documents\Sair\SairServer\SairServer\obj\Debug\SairServer.pdb
+C:\Users\nikla\Documents\Sair\SairServer\SairServer\bin\Debug\SairServer.exe
+C:\Users\nikla\Documents\Sair\SairServer\SairServer\bin\Debug\SairServer.pdb
+C:\Users\nikla\Documents\Sair\SairServer\SairServer\obj\Debug\SairServer.csprojResolveAssemblyReference.cache

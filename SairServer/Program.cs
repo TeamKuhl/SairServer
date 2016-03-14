@@ -19,7 +19,7 @@ namespace SairServer
 
             mDatabase = new Database(mIpAdress, "Sair", "root", "");
 
-            mengineObjects = new Container(Enums.sendType.objectchange);
+            mengineObjects = new Container(Enums.type.objectchange);
 
             wsServer wsServer = new wsServer(mIpAdress, 443);
             wsClients = new List<wsClient>();
@@ -57,9 +57,12 @@ namespace SairServer
 
         public static void addwsClient(wsClient awsClient)
         {
+            //Add eventlistener
             awsClient.onOpen += new OpenHandler(openWS);
             awsClient.onReceivedMessage += new ReceiveHandler(receivedMessage);
             awsClient.onClose += new CloseHandler(closeWS);
+
+            //Add new client to list
             wsClients.Add(awsClient);
 
             Console.WriteLine("New client has connected");
@@ -70,18 +73,22 @@ namespace SairServer
             Console.WriteLine("Client got ID: " + awsClient.ID);
             awsClient.send(mDatabase.getMap(9));
 
-            clientuuid cuuid = new clientuuid();
-            cuuid.uuid = awsClient.ID;
-            awsClient.send(cuuid);
+            //Send client UUID
+            Container container = new Container(Enums.type.clientuuid);
+            container.UUID = awsClient.ID;
+            awsClient.send(container);
 
+            //create vehicle
             engineObject obj = new engineObject(awsClient.ID, "fire", new position(1, 1, 1), new rotation());
 
             mengineObjects.add(obj);
 
-            Container container = new Container(Enums.sendType.objectchange);
+            //Send new vehicle to all clients
+            container = new Container(Enums.type.objectchange);
             container.add(obj);
             broadcastWS(container);
 
+            //Send all vehicles to the new client
             awsClient.send(mengineObjects);
         }
 
@@ -93,7 +100,7 @@ namespace SairServer
             {
                 if (eObj.uuid == awsClient.ID)
                 {
-                    Container container = new Container(Enums.sendType.objectdelete);
+                    Container container = new Container(Enums.type.objectdelete);
                     container.add(eObj);
                     broadcastWS(container);
 
@@ -107,31 +114,24 @@ namespace SairServer
 
         private static void receivedMessage(wsClient awsClient, string aMessage)
         {
-            if (aMessage == "map")
+            Enums.type objType = JSON.getType(aMessage);
+            if (objType == Enums.type.setobject)
             {
-                awsClient.send(mDatabase.getMap(1));
-            }
-            else
-            {
-                Enums.type objType = JSON.getType(aMessage);
-                if (objType == Enums.type.setobject)
+                object jsonObj = JSON.deserialize(aMessage);
+                engineObject obj = (engineObject)jsonObj;
+                obj.uuid = awsClient.ID;
+
+                Container container = new Container(Enums.type.objectchange);
+                container.add(obj);
+                broadcastWS(container, awsClient);
+
+                foreach (engineObject eObj in mengineObjects.objects)
                 {
-                    object jsonObj = JSON.deserialize(aMessage);
-                    engineObject obj = (engineObject)jsonObj;
-                    obj.uuid = awsClient.ID;
-
-                    Container container = new Container(Enums.sendType.objectchange);
-                    container.add(obj);
-                    broadcastWS(container, awsClient);
-
-                    foreach (engineObject eObj in mengineObjects.objects)
+                    if (eObj.uuid == awsClient.ID)
                     {
-                        if (eObj.uuid == awsClient.ID)
-                        {
-                            mengineObjects.delete(eObj);
-                            mengineObjects.add(obj);
-                            break;
-                        }
+                        mengineObjects.delete(eObj);
+                        mengineObjects.add(obj);
+                        break;
                     }
                 }
             }

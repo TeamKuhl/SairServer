@@ -4,9 +4,9 @@ namespace SairServer
 {
     public class position
     {
-        private double mX = 0;
-        private double mY = 0;
-        private double mZ = 0;
+        private double? mX;
+        private double? mY;
+        private double? mZ;
 
         public position()
         {
@@ -15,7 +15,7 @@ namespace SairServer
             mZ = 0;
         }
 
-        public position(double aX, double aY, double aZ)
+        public position(double? aX, double? aY, double? aZ)
         {
             mX = aX;
             mY = aY;
@@ -23,7 +23,7 @@ namespace SairServer
         }
 
         #region properties
-        public double x
+        public double? x
         {
             get
             {
@@ -35,7 +35,7 @@ namespace SairServer
             }
         }
 
-        public double y
+        public double? y
         {
             get
             {
@@ -47,7 +47,7 @@ namespace SairServer
             }
         }
 
-        public double z
+        public double? z
         {
             get
             {

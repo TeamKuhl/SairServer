@@ -7,15 +7,20 @@ namespace SairServer
     {
         private int mType = 0;
         private List<engineObject> mObjects;
+        private string mUUID;
 
-        public Container(Enums.sendType aType)
+        public Container(Enums.type aType)
         {
-            mObjects = new List<engineObject>();
             mType = (int)aType;
         }
 
         public void add(engineObject aObject)
         {
+            if (mObjects == null)
+            {
+                mObjects = new List<engineObject>();
+            }
+
             mObjects.Add(aObject);
         }
 
@@ -52,11 +57,27 @@ namespace SairServer
             }
         }
 
+        internal string UUID
+        {
+            get
+            {
+                return mUUID;
+            }
+            set
+            {
+                mUUID = value;
+            }
+        }
+
         public int t
         {
             get
             {
                 return mType;
+            }
+            set
+            {
+                mType = value;
             }
         }
 
@@ -65,6 +86,22 @@ namespace SairServer
             get
             {
                 return mObjects;
+            }
+            set
+            {
+                mObjects = value;
+            }
+        }
+
+        public string u
+        {
+            get
+            {
+                return mUUID;
+            }
+            set
+            {
+                mUUID = value;
             }
         }
         #endregion

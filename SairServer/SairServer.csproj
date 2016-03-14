@@ -53,11 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clientuuid.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="JSON.cs" />
-    <Compile Include="Map.cs" />
-    <Compile Include="Model.cs" />
     <Compile Include="Object\engineObject.cs" />
     <Compile Include="Object\Container.cs" />
     <Compile Include="Object\position.cs" />

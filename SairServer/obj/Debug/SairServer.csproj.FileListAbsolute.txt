@@ -20,3 +20,9 @@ F:\Sair\SairServer\SairServer\bin\Debug\SairServer.exe
 F:\Sair\SairServer\SairServer\bin\Debug\SairServer.pdb
 F:\Sair\SairServer\SairServer\bin\Debug\MySql.Data.dll
 F:\Sair\SairServer\SairServer\obj\Debug\SairServer.csprojResolveAssemblyReference.cache
+C:\Users\roll\Documents\Sair\SairServer\SairServer\bin\Debug\SairServer.exe.config
+C:\Users\roll\Documents\Sair\SairServer\SairServer\obj\Debug\SairServer.exe
+C:\Users\roll\Documents\Sair\SairServer\SairServer\obj\Debug\SairServer.pdb
+C:\Users\roll\Documents\Sair\SairServer\SairServer\bin\Debug\SairServer.exe
+C:\Users\roll\Documents\Sair\SairServer\SairServer\bin\Debug\SairServer.pdb
+C:\Users\roll\Documents\Sair\SairServer\SairServer\obj\Debug\SairServer.csprojResolveAssemblyReference.cache

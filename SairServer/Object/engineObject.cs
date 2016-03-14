@@ -72,6 +72,10 @@ namespace SairServer
             {
                 return mModel;
             }
+            set
+            {
+                mModel = value;
+            }
         }
 
         public position p
@@ -79,6 +83,10 @@ namespace SairServer
             get
             {
                 return mPosition;
+            }
+            set
+            {
+                mPosition = value;
             }
         }
 
@@ -88,6 +96,10 @@ namespace SairServer
             {
                 return mRotation;
             }
+            set
+            {
+                mRotation = value;
+            }
         }
 
         public string u
@@ -95,6 +107,10 @@ namespace SairServer
             get
             {
                 return mUUID;
+            }
+            set
+            {
+                mUUID = value;
             }
         }
         #endregion

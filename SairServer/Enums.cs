@@ -6,12 +6,6 @@ namespace SairServer
     {
         public enum type
         {
-            setobject,
-            unknown
-        };
-
-        public enum sendType
-        {
             mapchange = 1,
             objectchange = 2,
             objectdelete = 3,

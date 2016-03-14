@@ -21,8 +21,9 @@ namespace SairServer
             if (!string.IsNullOrWhiteSpace(aSerializedObject))
             {
                 dynamic dynamic = JsonConvert.DeserializeObject(aSerializedObject);
-                string typeString = Convert.ToString(dynamic.type);
-                Enums.type typeEnum = (Enums.type)Enum.Parse(typeof(Enums.type), typeString, true);
+                int typeInt = Convert.ToInt16(dynamic.t);
+
+                Enums.type typeEnum = (Enums.type)typeInt;
 
                 return typeEnum;
             }

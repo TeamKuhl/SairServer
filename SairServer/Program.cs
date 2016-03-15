@@ -70,16 +70,16 @@ namespace SairServer
 
         private static void openWS(wsClient awsClient)
         {
-            Console.WriteLine("Client got ID: " + awsClient.ID);
+            Console.WriteLine("Client got ID: " + awsClient.UUID);
             awsClient.send(mDatabase.getMap(11));
 
             //Send client UUID
             Container container = new Container(Enums.type.clientuuid);
-            container.UUID = awsClient.ID;
+            container.UUID = awsClient.UUID;
             awsClient.send(container);
 
             //create vehicle
-            engineObject obj = new engineObject(awsClient.ID, "fire", new position(1, 1, 1), new rotation(false));
+            engineObject obj = new engineObject(awsClient.UUID, "fire", new position(1, 1, 1), new rotation(false));
 
             mengineObjects.add(obj);
 
@@ -96,10 +96,11 @@ namespace SairServer
         {
             foreach (engineObject eObj in mengineObjects.objects)
             {
-                if (eObj.uuid == awsClient.ID)
+                if (eObj.uuid == awsClient.UUID)
                 {
+                    engineObject delobj = new engineObject(awsClient.UUID, null, null, null);
                     Container container = new Container(Enums.type.objectdelete);
-                    container.add(eObj);
+                    container.add(delobj);
                     broadcastWS(container, awsClient);
 
                     mengineObjects.delete(eObj);
@@ -107,11 +108,11 @@ namespace SairServer
                 }
             }
 
-            Console.WriteLine(awsClient.ID + " has disconnected");
+            Console.WriteLine(awsClient.UUID + " has disconnected");
 
             foreach (wsClient client in wsClients)
             {
-                if (client.ID == awsClient.ID)
+                if (client.UUID == awsClient.UUID)
                 {
                     wsClients.Remove(client);
                     break;
@@ -128,9 +129,17 @@ namespace SairServer
 
                 Container container = new Container(Enums.type.objectchange);
                 engineObject obj = (engineObject)jsonObj;
-                obj.uuid = awsClient.ID;
+                obj.uuid = awsClient.UUID;
                 container.add(optimizeJSON(obj));
                 broadcastWS(container, awsClient);
+            }
+        }
+
+        private static void generateUUID(wsClient awsClient)
+        {
+            foreach (wsClient client in wsClients)
+            {
+
             }
         }
 

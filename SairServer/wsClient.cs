@@ -14,6 +14,8 @@ namespace SairServer
         public CloseHandler onClose;
         public ReceiveHandler onReceivedMessage;
 
+        private string mUUID;
+
         public wsClient()
         {
             Program.addwsClient(this);
@@ -51,6 +53,19 @@ namespace SairServer
         {
             string serializedObject = JSON.serialize(aObject);
             send(serializedObject);
+        }
+
+        public string UUID
+        {
+            get
+            {
+                return this.ID.Substring(0, 5);
+                //return mUUID;
+            }
+            //set
+            //{
+            //    mUUID = value;
+            //}
         }
     }
 }

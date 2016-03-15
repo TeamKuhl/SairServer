@@ -79,7 +79,7 @@ namespace SairServer
             awsClient.send(container);
 
             //create vehicle
-            engineObject obj = new engineObject(awsClient.UUID, "fire", new position(1, 1, 1), new rotation(false));
+            engineObject obj = new engineObject(awsClient.UUID, "tanka", new position(1, 1, 1), new rotation(false));
 
             mengineObjects.add(obj);
 

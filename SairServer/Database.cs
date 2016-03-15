@@ -30,22 +30,10 @@ namespace SairServer
             {
                 container.add(new engineObject(null, Reader.GetValue(2).ToString(), new position(Convert.ToDouble(Reader.GetValue(3)), Convert.ToDouble(Reader.GetValue(4)), Convert.ToDouble(Reader.GetValue(5))), new rotation(null, Convert.ToDouble(Reader.GetValue(6)), null)));
             }
-
+            container.add(new engineObject(null, "trees", new position(10,1,10) , null));
             mSQLConnection.Close();
 
             return container;
         }
-
-        //public void InsertMaptile(int aMapID, string aName, int aX, int aY, int aZ, double aRotation)
-        //{
-        //    string insertQuery = "INSERT INTO maptiles (mapid, model, x, y, z, rotation) Values(" + aMapID.ToString() + ", '" + aName + "', " + aX.ToString() + ", " + aY.ToString() + ", " + aZ.ToString() + ", '" + aRotation.ToString() + "')";
-        //    MySqlCommand command = new MySqlCommand(insertQuery);
-        //    command.Connection = mSQLConnection;
-
-        //    mSQLConnection.Open();
-        //    command.ExecuteNonQuery();
-
-        //    mSQLConnection.Close();
-        //}
     }
 }

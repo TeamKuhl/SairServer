@@ -30,7 +30,7 @@ namespace SairServer
             {
                 container.add(new engineObject(null, Reader.GetValue(2).ToString(), new position(Convert.ToDouble(Reader.GetValue(3)), Convert.ToDouble(Reader.GetValue(4)), Convert.ToDouble(Reader.GetValue(5))), new rotation(null, Convert.ToDouble(Reader.GetValue(6)), null)));
             }
-            container.add(new engineObject(null, "trees", new position(10,1,10) , null));
+            container.add(new engineObject(null, "trees", new position(10,1,11) , null));
             mSQLConnection.Close();
 
             return container;

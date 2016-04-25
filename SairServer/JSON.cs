@@ -16,28 +16,93 @@ namespace SairServer
             return string.Empty;
         }
 
-        public static Enums.type getType(string aSerializedObject)
+        public static Container deserialize(string aSerializedObject)
+        {
+            if (!string.IsNullOrWhiteSpace(aSerializedObject))
+            {
+                Container obj = JsonConvert.DeserializeObject<Container>(aSerializedObject);
+
+                return obj;
+            }
+
+            return null;
+        }
+
+        public static Enums.Namespace? getNamespace(string aSerializedObject)
         {
             if (!string.IsNullOrWhiteSpace(aSerializedObject))
             {
                 dynamic dynamic = JsonConvert.DeserializeObject(aSerializedObject);
-                int typeInt = Convert.ToInt16(dynamic.t);
+                string type = Convert.ToString(dynamic.t);
 
-                Enums.type typeEnum = (Enums.type)typeInt;
+                string[] splitType = type.Split('_');
+                int Namespace = Convert.ToInt16(splitType[0]);
 
-                return typeEnum;
+                return (Enums.Namespace)Namespace;
             }
 
-            return Enums.type.unknown;
+            return null;
         }
 
-        public static object deserialize(string aSerializedObject)
+        public static Enums.System? getSystem(string aSerializedObject)
         {
             if (!string.IsNullOrWhiteSpace(aSerializedObject))
             {
-                engineObject obj = JsonConvert.DeserializeObject<engineObject>(aSerializedObject);
+                dynamic dynamic = JsonConvert.DeserializeObject(aSerializedObject);
+                string type = Convert.ToString(dynamic.t);
 
-                return obj;
+                string[] splitType = type.Split('_');
+                int system = Convert.ToInt16(splitType[1]);
+
+                return (Enums.System)system;
+            }
+
+            return null;
+        }
+
+        public static Enums.User? getUser(string aSerializedObject)
+        {
+            if (!string.IsNullOrWhiteSpace(aSerializedObject))
+            {
+                dynamic dynamic = JsonConvert.DeserializeObject(aSerializedObject);
+                string type = Convert.ToString(dynamic.t);
+
+                string[] splitType = type.Split('_');
+                int user = Convert.ToInt16(splitType[1]);
+
+                return (Enums.User)user;
+            }
+
+            return null;
+        }
+
+        public static Enums.Lobby? getLobby(string aSerializedObject)
+        {
+            if (!string.IsNullOrWhiteSpace(aSerializedObject))
+            {
+                dynamic dynamic = JsonConvert.DeserializeObject(aSerializedObject);
+                string type = Convert.ToString(dynamic.t);
+
+                string[] splitType = type.Split('_');
+                int lobby = Convert.ToInt16(splitType[1]);
+
+                return (Enums.Lobby)lobby;
+            }
+
+            return null;
+        }
+
+        public static Enums.Game? getGame(string aSerializedObject)
+        {
+            if (!string.IsNullOrWhiteSpace(aSerializedObject))
+            {
+                dynamic dynamic = JsonConvert.DeserializeObject(aSerializedObject);
+                string type = Convert.ToString(dynamic.t);
+
+                string[] splitType = type.Split('_');
+                int game = Convert.ToInt16(splitType[1]);
+
+                return (Enums.Game)game;
             }
 
             return null;

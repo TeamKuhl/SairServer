@@ -54,15 +54,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="GameHandler.cs" />
     <Compile Include="JSON.cs" />
-    <Compile Include="Object\engineObject.cs" />
-    <Compile Include="Object\Container.cs" />
-    <Compile Include="Object\position.cs" />
-    <Compile Include="Object\rotation.cs" />
+    <Compile Include="Container\Container.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="wsClient.cs" />
+    <Compile Include="wsClientFactory.cs" />
     <Compile Include="wsServer.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -60,12 +60,7 @@ namespace SairServer
             get
             {
                 return this.ID.Substring(0, 5);
-                //return mUUID;
             }
-            //set
-            //{
-            //    mUUID = value;
-            //}
         }
     }
 }

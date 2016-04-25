@@ -9,6 +9,8 @@ namespace SairServer
         private Enums.message_class? mMessage_class = null;
         private string mMessage = null;
         private string mName = null;
+        private Lobby mLobby = null;
+        private List<Lobby> mLobbies = null;
 
         #region constructors
         internal Container(Enums.Namespace aNamespace, Enums.System aSystem)
@@ -16,9 +18,9 @@ namespace SairServer
             mType = (int)aNamespace + "_" + (int)aSystem;
         }
 
-        internal Container(Enums.Namespace aNamespace, Enums.System aSystem)
+        internal Container(Enums.Namespace aNamespace, Enums.Lobby aLobby)
         {
-            mType = (int)aNamespace + "_" + (int)aSystem;
+            mType = (int)aNamespace + "_" + (int)aLobby;
         }
         #endregion
 
@@ -27,8 +29,29 @@ namespace SairServer
             mMessage_class = aMessage_class;
             mMessage = aMessage;
         }
-
         #region internal properties
+        internal List<Lobby> Lobbies
+        {
+            get
+            {
+                return mLobbies;
+            }
+            set
+            {
+                mLobbies = value;
+            }
+        }
+        internal Lobby Lobby
+        {
+            get
+            {
+                return mLobby;
+            }
+            set
+            {
+                mLobby = value;
+            }
+        }
         internal string Name
         {
             get
@@ -76,6 +99,14 @@ namespace SairServer
             set
             {
                 mName = value;
+            }
+        }
+
+        public List<Lobby> l
+        {
+            get
+            {
+                return mLobbies;
             }
         }
         #endregion

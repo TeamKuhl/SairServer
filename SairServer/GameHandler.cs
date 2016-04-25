@@ -8,11 +8,15 @@ namespace SairServer
 {
     public class GameHandler
     {
+        private wsClientFactory mWsClientFactory;
         private List<Player> mPlayers;
+        private List<Lobby> mLobbies;
 
-        public GameHandler()
+        public GameHandler(wsClientFactory aWsClientFactory)
         {
             mPlayers = new List<Player>();
+            mLobbies = new List<Lobby>();
+            mWsClientFactory = aWsClientFactory;
         }
 
         public void addPlayer(wsClient aWsClient)
@@ -39,6 +43,13 @@ namespace SairServer
             }
 
             return null;
+        }
+
+        public void getLobbies(wsClient aWsClient)
+        {
+            Container container = new Container(Enums.Namespace.Lobby, Enums.Lobby.Lobbies);
+            container.Lobbies = mLobbies;
+            aWsClient.send(JSON.serialize(container));
         }
     }
 }

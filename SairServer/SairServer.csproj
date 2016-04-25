@@ -57,6 +57,7 @@
     <Compile Include="GameHandler.cs" />
     <Compile Include="JSON.cs" />
     <Compile Include="Container\Container.cs" />
+    <Compile Include="Lobby.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

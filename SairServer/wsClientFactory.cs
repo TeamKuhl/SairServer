@@ -14,7 +14,7 @@ namespace SairServer
         public wsClientFactory()
         {
             mWsClients = new List<wsClient>();
-            mGameHandler = new GameHandler();
+            mGameHandler = new GameHandler(this);
         }
 
         public void broadcast(object obj)

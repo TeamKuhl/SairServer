@@ -10,10 +10,17 @@ namespace SairServer
         private string mMessage = null;
         private string mName = null;
 
+        #region constructors
         internal Container(Enums.Namespace aNamespace, Enums.System aSystem)
         {
             mType = (int)aNamespace + "_" + (int)aSystem;
         }
+
+        internal Container(Enums.Namespace aNamespace, Enums.System aSystem)
+        {
+            mType = (int)aNamespace + "_" + (int)aSystem;
+        }
+        #endregion
 
         internal void addMessage(Enums.message_class? aMessage_class, string aMessage)
         {

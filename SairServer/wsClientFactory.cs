@@ -45,6 +45,7 @@ namespace SairServer
 
             //Add new client to list
             mWsClients.Add(awsClient);
+            mGameHandler.addPlayer(awsClient);
 
             Console.WriteLine("New client has connected");
         }
@@ -89,7 +90,7 @@ namespace SairServer
                         switch (objUser)
                         {
                             case Enums.User.SetName:
-                                mGameHandler.SetName(JSON.deserialize(aMessage));
+                                mGameHandler.setName(JSON.deserialize(aMessage), awsClient);
                                 break;
                         }
                         break;
